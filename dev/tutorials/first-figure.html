@@ -31,7 +31,6 @@
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -224,7 +223,6 @@
                    class="fa fa-github"> Improve this page</a>
             
         
-        
     </li>
 
   </ul>
@@ -235,31 +233,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<div class="sphx-glr-download-link-note admonition note">
+  <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p>Click <a class="reference internal" href="#sphx-glr-download-tutorials-first-figure-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
@@ -270,9 +244,10 @@ to download the full example code</p>
 and naming conventions.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This tutorial assumes the use of a Python notebook, such as IPython or Jupyter Notebook.
+<p>This tutorial assumes the use of a Python notebook, such as <a class="reference external" href="https://ipython.org/">IPython</a>
+or <a class="reference external" href="https://jupyter.org/">JupyterLab</a>.
 To see the figures while using a Python script instead, use
-<code class="docutils literal notranslate"><span class="pre">fig.show(method=&quot;external)</span></code> to display the figure in the default PDF viewer.</p>
+<code class="docutils literal notranslate"><span class="pre">fig.show(method=&quot;external&quot;)</span></code> to display the figure in the default PDF viewer.</p>
 <p>To save the figure, use <code class="docutils literal notranslate"><span class="pre">fig.savefig(&quot;figname.pdf&quot;)</span></code> where <code class="docutils literal notranslate"><span class="pre">&quot;figname.pdf&quot;</span></code>
 is the desired name and file extension for the saved figure.</p>
 </div>
@@ -291,10 +266,12 @@ Start a new figure by creating an instance of this class:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../api/generated/pygmt.Figure.html#pygmt.Figure" title="pygmt.Figure" class="sphx-glr-backref-module-pygmt sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a> <span class="o">=</span> <a href="../api/generated/pygmt.Figure.html#pygmt.Figure" title="pygmt.Figure" class="sphx-glr-backref-module-pygmt sphx-glr-backref-type-py-class"><span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p>Add elements to the figure using its methods. For example, let’s start a map with an
-automatic frame and ticks around a given longitude and latitude bound, set the
-projection to Mercator (<code class="docutils literal notranslate"><span class="pre">M</span></code>), and the map width to 8 inches:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../api/generated/pygmt.Figure.basemap.html#pygmt.Figure.basemap" title="pygmt.Figure.basemap" class="sphx-glr-backref-module-pygmt sphx-glr-backref-type-py-method"><span class="n">fig</span><span class="o">.</span><span class="n">basemap</span></a><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="o">-</span><span class="mi">70</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;M8i&quot;</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<p>Add elements to the figure using its methods. For example, let’s use
+<a class="reference internal" href="../api/generated/pygmt.Figure.basemap.html#pygmt.Figure.basemap" title="pygmt.Figure.basemap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pygmt.Figure.basemap</span></code></a> to start the creation of a map. We’ll use the <code class="docutils literal notranslate"><span class="pre">region</span></code> parameter
+to provide the longitude and latitude bounds, the <code class="docutils literal notranslate"><span class="pre">projection</span></code> parameter to set
+the projection to Mercator (<strong>M</strong>) and the map width to 15 cm, and the <code class="docutils literal notranslate"><span class="pre">frame</span></code>
+parameter to generate a frame with automatic tick and annotation spacings.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../api/generated/pygmt.Figure.basemap.html#pygmt.Figure.basemap" title="pygmt.Figure.basemap" class="sphx-glr-backref-module-pygmt sphx-glr-backref-type-py-method"><span class="n">fig</span><span class="o">.</span><span class="n">basemap</span></a><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="o">-</span><span class="mi">70</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;M15c&quot;</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Now we can add coastlines using <a class="reference internal" href="../api/generated/pygmt.Figure.coast.html#pygmt.Figure.coast" title="pygmt.Figure.coast"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pygmt.Figure.coast</span></code></a> to this map using the
@@ -314,7 +291,7 @@ default resolution, line width, and color:</p>
 <p>You can also set the map region, projection, and frame type directly in other methods
 without calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">gmt.Figure.basemap</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../api/generated/pygmt.Figure.html#pygmt.Figure" title="pygmt.Figure" class="sphx-glr-backref-module-pygmt sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a> <span class="o">=</span> <a href="../api/generated/pygmt.Figure.html#pygmt.Figure" title="pygmt.Figure" class="sphx-glr-backref-module-pygmt sphx-glr-backref-type-py-class"><span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span></a><span class="p">()</span>
-<a href="../api/generated/pygmt.Figure.coast.html#pygmt.Figure.coast" title="pygmt.Figure.coast" class="sphx-glr-backref-module-pygmt sphx-glr-backref-type-py-method"><span class="n">fig</span><span class="o">.</span><span class="n">coast</span></a><span class="p">(</span><span class="n">shorelines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="o">-</span><span class="mi">70</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;M8i&quot;</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a href="../api/generated/pygmt.Figure.coast.html#pygmt.Figure.coast" title="pygmt.Figure.coast" class="sphx-glr-backref-module-pygmt sphx-glr-backref-type-py-method"><span class="n">fig</span><span class="o">.</span><span class="n">coast</span></a><span class="p">(</span><span class="n">shorelines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="o">-</span><span class="mi">70</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;M15c&quot;</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <a href="../api/generated/pygmt.Figure.show.html#pygmt.Figure.show" title="pygmt.Figure.show" class="sphx-glr-backref-module-pygmt sphx-glr-backref-type-py-method"><span class="n">fig</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
@@ -334,25 +311,33 @@ format is inferred from the extension.</p>
 </div>
 <div class="section" id="note-for-experienced-gmt-users">
 <h2>Note for experienced GMT users<a class="headerlink" href="#note-for-experienced-gmt-users" title="Permalink to this headline">¶</a></h2>
-<p>You’ll probably have noticed several things that are different from classic
-command-line GMT. Many of these changes reflect the new GMT modern execution mode that
-are part of GMT 6. A few are PyGMT exclusive (like the <code class="docutils literal notranslate"><span class="pre">savefig</span></code> method).</p>
+<p>You have probably noticed several things that are different from classic
+command-line GMT. Many of these changes reflect the new GMT modern execution
+mode that is part of GMT 6.</p>
 <ol class="arabic simple">
-<li><p>The name of method is <code class="docutils literal notranslate"><span class="pre">coast</span></code> instead of <code class="docutils literal notranslate"><span class="pre">pscoast</span></code>. As a general rule, all
-<code class="docutils literal notranslate"><span class="pre">ps*</span></code> modules had their <code class="docutils literal notranslate"><span class="pre">ps</span></code> prefix removed. The exceptions are:
-<code class="docutils literal notranslate"><span class="pre">psxy</span></code> which is now <code class="docutils literal notranslate"><span class="pre">plot</span></code>, <code class="docutils literal notranslate"><span class="pre">psxyz</span></code> which is now <code class="docutils literal notranslate"><span class="pre">plot3d</span></code>, and <code class="docutils literal notranslate"><span class="pre">psscale</span></code>
-which is now <code class="docutils literal notranslate"><span class="pre">colorbar</span></code>.</p></li>
-<li><p>The arguments don’t use the GMT 1-letter syntax (R, J, B, etc). We use longer
-aliases for these arguments and have some Python exclusive names. The mapping
-between the GMT arguments and their Python counterparts should be straight forward.</p></li>
-<li><p>Arguments like <code class="docutils literal notranslate"><span class="pre">region</span></code> can take lists as well as strings like <code class="docutils literal notranslate"><span class="pre">1/2/3/4</span></code>.</p></li>
-<li><p>If a GMT argument has no options (like <code class="docutils literal notranslate"><span class="pre">-B</span></code> instead of <code class="docutils literal notranslate"><span class="pre">-Baf</span></code>), use a <code class="docutils literal notranslate"><span class="pre">True</span></code>
-in Python. An empty string would also be acceptable. For repeated arguments, such
-as <code class="docutils literal notranslate"><span class="pre">-B+Loleron</span> <span class="pre">-Bxaf</span> <span class="pre">-By+lm</span></code>, provide a list: <code class="docutils literal notranslate"><span class="pre">frame=[&quot;+Loleron&quot;,</span> <span class="pre">&quot;xaf&quot;,</span> <span class="pre">&quot;y+lm&quot;]</span></code>.</p></li>
+<li><p>As a general rule, the <code class="docutils literal notranslate"><span class="pre">ps</span></code> prefix has been removed from all <code class="docutils literal notranslate"><span class="pre">ps*</span></code>
+modules (PyGMT methods). For example, the name of the GMT 5 module <code class="docutils literal notranslate"><span class="pre">pscoast</span></code>
+is <code class="docutils literal notranslate"><span class="pre">coast</span></code> in GMT 6 and PyGMT. The exceptions are:  <code class="docutils literal notranslate"><span class="pre">psxy</span></code> which is now
+<code class="docutils literal notranslate"><span class="pre">plot</span></code>, <code class="docutils literal notranslate"><span class="pre">psxyz</span></code> which is now <code class="docutils literal notranslate"><span class="pre">plot3d</span></code>, and <code class="docutils literal notranslate"><span class="pre">psscale</span></code> which is now
+<code class="docutils literal notranslate"><span class="pre">colorbar</span></code>.</p></li>
+<li><p>More details can be found in the <a class="reference external" href="https://docs.generic-mapping-tools.org/latest//cookbook/introduction.html#modern-and-classic-mode">GMT cookbook introduction to
+modern mode</a>.</p></li>
+</ol>
+<p>A few are PyGMT exclusive (like the <code class="docutils literal notranslate"><span class="pre">savefig</span></code> method).</p>
+<ol class="arabic simple">
+<li><p>The PyGMT parameters (called options or arguments in GMT) don’t use the GMT
+1-letter syntax (<strong>R</strong>, <strong>J</strong>, <strong>B</strong>, etc). We use longer
+aliases for these parameters and have some Python exclusive names. The mapping
+between the GMT parameters and their PyGMT aliases should be straightforward.
+For some modules, these aliases are still being developed.</p></li>
+<li><p>Parameters like <code class="docutils literal notranslate"><span class="pre">region</span></code> can take <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">lists</span></code></a> as well as strings like <code class="docutils literal notranslate"><span class="pre">1/2/3/4</span></code>.</p></li>
+<li><p>If a GMT option has no arguments (like <code class="docutils literal notranslate"><span class="pre">-B</span></code> instead of <code class="docutils literal notranslate"><span class="pre">-Baf</span></code>), use a <code class="docutils literal notranslate"><span class="pre">True</span></code>
+in Python. An empty string would also be acceptable. For repeated parameters, such
+as <code class="docutils literal notranslate"><span class="pre">-B+Loleron</span> <span class="pre">-Bxaf</span> <span class="pre">-By+lm</span></code>, provide a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>: <code class="docutils literal notranslate"><span class="pre">frame=[&quot;+Loleron&quot;,</span> <span class="pre">&quot;xaf&quot;,</span> <span class="pre">&quot;y+lm&quot;]</span></code>.</p></li>
 <li><p>There is no output redirecting to a PostScript file. The figure is generated in the
 background and will only be shown or saved when you ask for it.</p></li>
 </ol>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.820 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.141 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-first-figure-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/ff35ca6812b45ea39d3a79f79ceee993/first-figure.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">first-figure.py</span></code></a></p>
@@ -389,7 +374,7 @@ background and will only be shown or saved when you ask for it.</p></li>
         &copy; Copyright 2017-2021, The PyGMT Developers.
       
         <span class="commit">
-          Revision <code><a href="https://github.com/GenericMappingTools/pygmt/commit/65b099a">65b099a</a></code>.
+          Revision <code><a href="https://github.com/GenericMappingTools/pygmt/commit/88fafa5">88fafa5</a></code>.
         </span>
       
 
